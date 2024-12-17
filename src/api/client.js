@@ -1,6 +1,6 @@
 // src/api/client.js
 import axios from "axios";
-const API_BASE_URL = "https://it2125-maturita.sspu-opava.cz/api"
+const API_BASE_URL = "https://it2125-maturita.kube.sspu-opava.cz/api"
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   withCredentials: true, // Ensures cookies are sent with requests
