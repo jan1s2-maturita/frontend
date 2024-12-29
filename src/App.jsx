@@ -13,17 +13,17 @@ export default function App() {
   return (
     <Router>
       <Navbar />
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <Routes>
-        <Route path="/" element={<LoginForm />} />
-        <Route path="/register" element={<RegisterForm />} />
-        <Route path="/challenges" element={<Challenges />} />
-        <Route path="/instances" element={<RunningInstances />} />
-        <Route path="/flag-submit" element={<FlagSubmit />} />
-        <Route path="/delete-instance" element={<DeleteInstance />} />
-        <Route path="/admin" element={<Admin />} />
-      </Routes>
-    </div>
+      <div id="content">
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterForm />} />
+          <Route path="/challenges" element={<Challenges />} />
+          <Route path="/instances" element={<RunningInstances />} />
+          <Route path="/flag-submit" element={<FlagSubmit />} />
+          <Route path="/delete-instance" element={<DeleteInstance />} />
+          <Route path="/admin" element={<Admin />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

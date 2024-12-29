@@ -13,6 +13,34 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  z-index: 10;
+  padding: 10px;
+
+}
+
+#content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,8 +52,8 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /*display: flex;*/
+  /*place-items: center;*/
   min-width: 320px;
   min-height: 100vh;
 }

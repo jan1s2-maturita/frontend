@@ -15,6 +15,15 @@ export default function Admin() {
     challenge_id: "",
     points: "",
   });
+
+  const [user, setUser] = useState({
+    id: "",
+    password: "",
+    is_admin: "",
+  });
+
+  
+
   const [healthStatus, setHealthStatus] = useState("");
 
   const handleChallengeSubmit = async () => {
@@ -38,6 +47,15 @@ export default function Admin() {
       alert("Error creating flag: " + err.response?.data?.detail || err.message);
     }
   };
+
+  const handleUserUpdateSubmit = async () => {
+    try {
+      await apiClient.put(`/admin/user/${user.id}`, user);
+      alert("User updated successfully!");
+    } catch (err) {
+      alert("Error updating user: " + err.response?.data?.detail || err.message);
+    }
+  }
 
   const checkHealth = async () => {
     try {
@@ -103,6 +121,32 @@ export default function Admin() {
         />
         <button onClick={handleFlagSubmit}>Create Flag</button>
       </div>
+
+      {/* User Update Form */}
+    <div>
+      <h2>Update User</h2>
+      <input
+        placeholder="User ID"
+        value={user.id}
+        onChange={(e) => setUser({ ...user, id: e.target.value })}
+        type="number"
+        min="0"
+        step="1"
+      />
+      <input
+        placeholder="Password"
+        value={user.password}
+        onChange={(e) => setUser({ ...user, password: e.target.value })}
+        type="password"
+      />
+      <input
+        placeholder="Is Admin"
+        value={user.is_admin}
+        onChange={(e) => setUser({ ...user, is_admin: e.target.value })}
+        type="checkbox"
+      />
+      <button onClick={handleUserUpdateSubmit}>Update User</button>
+    </div>
 
       {/* Health Check */}
       <div>
