@@ -10,7 +10,7 @@ export default function LoginForm() {
   const handleLogin = async () => {
     try {
       const response = await apiClient.post("/auth/login", { username, password });
-      document.cookie = `token=${response.data}; path=/;`;
+      document.cookie = `token=${response.data.token}; path=/;`;
       window.location.reload(); // Reload to show authenticated view
     } catch (err) {
       setError("Invalid credentials. Please try again.");
