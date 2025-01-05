@@ -8,8 +8,8 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use((config) => {
   // Inject token from cookie into headers
-  const token = document.cookie.split("; ").find((row) => row.startsWith("token="))?.split("=")[1];
-  if (token) config.headers["x-token"] = token;
+  //const token = document.cookie.split("; ").find((row) => row.startsWith("token="))?.split("=")[1];
+  //if (token) config.headers["x-token"] = token;
   return config;
 });
 
