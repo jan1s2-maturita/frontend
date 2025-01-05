@@ -7,7 +7,7 @@ export default function DeleteInstance() {
 
   const deleteInstance = async () => {
     try {
-      await apiClient.delete(`/deleter/delete/${challengeId}`);
+      await apiClient.delete(`/deleter/${challengeId}`);
       alert("Instance deleted successfully!");
     } catch {
       alert("Failed to delete instance.");
