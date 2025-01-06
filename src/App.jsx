@@ -8,6 +8,7 @@ import FlagSubmit from "./components/FlagSubmit";
 import DeleteInstance from "./components/DeleteInstance";
 import Navbar from "./components/Navbar";
 import Admin from "./components/Admin";
+import AccessBox from "./components/AccessBox";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/flag-submit" element={<FlagSubmit />} />
           <Route path="/delete-instance" element={<DeleteInstance />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/access-box" element={<AccessBox />} />
         </Routes>
       </div>
     </Router>
