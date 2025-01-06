@@ -37,6 +37,12 @@ export default function AccessBox() {
       alert("Error creating access box: " + err.response?.data?.detail || err.message);
     }
   };
+  const deleteAccessBox = async () => {
+    try {
+      await apiClient.delete("/accessbox/delete");
+      alert("Access box deleted successfully!");
+    } catch (err) {
+      alert("Error deleting access box: " + err.response?.data?.detail || err.message);
 
   // Check Health
   const checkHealth = async () => {
@@ -86,6 +92,7 @@ export default function AccessBox() {
       <div>
         <h2>Access Box</h2>
         <button onClick={createAccessBox}>Create Access Box</button>
+        <button onClick={deleteAccessBox}>Delete Access Box</button>
       </div>
 
       {/* Health Check */}
