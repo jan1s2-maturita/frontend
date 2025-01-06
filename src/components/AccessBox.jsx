@@ -11,7 +11,7 @@ export default function AccessBox() {
   // Execute Command
   const executeCommand = async () => {
     try {
-      const response = await apiClient.post("/exec", { cmd: command });
+      const response = await apiClient.post("/accessboy/exec", { cmd: command });
       setCommandResult("Command executed successfully!");
     } catch (err) {
       setCommandResult("Error executing command: " + err.response?.data?.detail || err.message);
@@ -21,7 +21,7 @@ export default function AccessBox() {
   // Fetch Logs
   const fetchLogs = async () => {
     try {
-      const response = await apiClient.get("/logs");
+      const response = await apiClient.get("/accessbox/logs");
       setLogs(response.data.logs);
     } catch (err) {
       setLogs("Error fetching logs: " + err.response?.data?.detail || err.message);
@@ -31,7 +31,7 @@ export default function AccessBox() {
   // Create Access Box
   const createAccessBox = async () => {
     try {
-      await apiClient.post("/create");
+      await apiClient.post("/accessbox/create");
       alert("Access box created successfully!");
     } catch (err) {
       alert("Error creating access box: " + err.response?.data?.detail || err.message);
@@ -41,7 +41,7 @@ export default function AccessBox() {
   // Check Health
   const checkHealth = async () => {
     try {
-      const response = await apiClient.get("/health");
+      const response = await apiClient.get("/accessbox/health");
       setHealthStatus(response.data.status);
     } catch (err) {
       setHealthStatus("Error: " + err.message);
