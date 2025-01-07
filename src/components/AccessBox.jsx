@@ -43,6 +43,8 @@ export default function AccessBox() {
       alert("Access box deleted successfully!");
     } catch (err) {
       alert("Error deleting access box: " + err.response?.data?.detail || err.message);
+    }
+  };
 
   // Check Health
   const checkHealth = async () => {
