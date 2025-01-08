@@ -11,7 +11,7 @@ export default function AccessBox() {
   // Execute Command
   const executeCommand = async () => {
     try {
-      const response = await apiClient.post("/accessboy/exec", { cmd: command });
+      const response = await apiClient.post("/accessbox/exec", { cmd: command });
       setCommandResult("Command executed successfully!");
     } catch (err) {
       setCommandResult("Error executing command: " + err.response?.data?.detail || err.message);
